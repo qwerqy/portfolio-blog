@@ -1,16 +1,16 @@
-class BlogPostsController < ApplicationController
+class BlogPostsController < ApiController
   before_action :set_blog_post, only: [:show, :update, :destroy]
 
   # GET /blog_posts
   def index
-    @blog_posts = BlogPost.all
-
-    render json: @blog_posts
+    @blog_posts = BlogPost.select(:id, :title, :content).all
+    render json: @blog_posts.to_json
   end
 
   # GET /blog_posts/1
   def show
-    render json: @blog_post
+    @blog_post = BlogPost.find(params[:id])
+    render json: @blog_post.to_json
   end
 
   # POST /blog_posts
