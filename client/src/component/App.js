@@ -6,6 +6,7 @@ import About from './pages/about/About';
 import Blog from './pages/blog/Blog';
 import Selldome from './pages/projects/Selldome';
 import JobCrop from './pages/projects/JobCrop';
+import NotFound from './NotFound';
 import Footer from './Footer';
 import '../css/App.css';
 
@@ -25,6 +26,7 @@ class App extends Component {
               // Hard coded for now. will implement with Rails soon
               <Route path='/selldome' component={Selldome} />
               <Route path='/jobcrop' component={JobCrop} />
+              <Route component={NotFound} />
             </Switch>
           </div>
           <Footer />
