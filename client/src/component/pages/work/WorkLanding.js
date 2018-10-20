@@ -18,12 +18,14 @@ class WorkLanding extends Component {
 
   raisedOnHover(id) {
     const element = document.getElementById(id)
-    element.addEventListener('mouseover', () => {
-      element.classList.add('raised')
-    })
-    element.addEventListener('mouseout', () => {
-      element.classList.remove('raised')
-    })
+    if (element != null) {
+      element.addEventListener('mouseover', () => {
+        element.classList.add('raised')
+      })
+      element.addEventListener('mouseout', () => {
+        element.classList.remove('raised')
+      })
+    }
   }
 
   render() {
@@ -63,24 +65,28 @@ class WorkLanding extends Component {
           <Grid>
             <Grid.Row centered columns={1}>
               <Grid.Column>
-                <Card fluid>
-                  <Image src='https://i.imgur.com/7fmXZvn.png' fluid />
-                  <Card.Content>
-                    <Card.Header className="blog-title">Selldome</Card.Header>
-                    <Card.Meta>Built with Ruby On Rails</Card.Meta>
-                    <Card.Description className="blog-content">AirBnb Clone app developed for an assignment during my bootcamp.</Card.Description>
-                  </Card.Content>
-                </Card>
+                <NavLink to='/selldome'>
+                  <Card fluid>
+                    <Image src='https://i.imgur.com/7fmXZvn.png' fluid />
+                    <Card.Content>
+                      <Card.Header className="blog-title">Selldome</Card.Header>
+                      <Card.Meta>Built with Ruby On Rails</Card.Meta>
+                      <Card.Description className="blog-content">AirBnb Clone app developed for an assignment during my bootcamp.</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </NavLink>
               </Grid.Column>
               <Grid.Column>
-                <Card fluid>
-                  <Image src='https://i.imgur.com/m1ytpk6.png' fluid />
-                  <Card.Content>
-                    <Card.Header className="blog-title">JobCrop</Card.Header>
-                    <Card.Meta>Built with React & Ruby On Rails</Card.Meta>
-                    <Card.Description className="blog-content">A jobhunting website with a powerful jobhunting metasearch engine.</Card.Description>
-                  </Card.Content>
-                </Card>
+                <NavLink to='/jobcrop'>
+                  <Card fluid>
+                    <Image src='https://i.imgur.com/m1ytpk6.png' fluid />
+                    <Card.Content>
+                      <Card.Header className="blog-title">JobCrop</Card.Header>
+                      <Card.Meta>Built with React & Ruby On Rails</Card.Meta>
+                      <Card.Description className="blog-content">A jobhunting website with a powerful jobhunting metasearch engine.</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </NavLink>
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -89,24 +95,28 @@ class WorkLanding extends Component {
           <Grid>
             <Grid.Row centered columns={1}>
               <Grid.Column>
-                <Card fluid>
-                  <Image src='https://i.imgur.com/7fmXZvn.png' fluid />
-                  <Card.Content>
-                    <Card.Header className="blog-title">Selldome</Card.Header>
-                    <Card.Meta>Built with Ruby On Rails</Card.Meta>
-                    <Card.Description className="blog-content">AirBnb Clone app developed for an assignment during my bootcamp.</Card.Description>
-                  </Card.Content>
-                </Card>
+                <NavLink to='/selldome'>
+                  <Card fluid>
+                    <Image src='https://i.imgur.com/7fmXZvn.png' fluid />
+                    <Card.Content>
+                      <Card.Header className="blog-title">Selldome</Card.Header>
+                      <Card.Meta>Built with Ruby On Rails</Card.Meta>
+                      <Card.Description className="blog-content">AirBnb Clone app developed for an assignment during my bootcamp.</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </NavLink>
               </Grid.Column>
               <Grid.Column>
-                <Card fluid>
-                  <Image src='https://i.imgur.com/m1ytpk6.png' fluid />
-                  <Card.Content>
-                    <Card.Header className="blog-title">JobCrop</Card.Header>
-                    <Card.Meta>Built with React & Ruby On Rails</Card.Meta>
-                    <Card.Description className="blog-content">A jobhunting website with a powerful jobhunting metasearch engine.</Card.Description>
-                  </Card.Content>
-                </Card>
+                <NavLink to='/jobcrop'>
+                  <Card fluid>
+                    <Image src='https://i.imgur.com/m1ytpk6.png' fluid />
+                    <Card.Content>
+                      <Card.Header className="blog-title">JobCrop</Card.Header>
+                      <Card.Meta>Built with React & Ruby On Rails</Card.Meta>
+                      <Card.Description className="blog-content">A jobhunting website with a powerful jobhunting metasearch engine.</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </NavLink>
               </Grid.Column>
             </Grid.Row>
           </Grid>
