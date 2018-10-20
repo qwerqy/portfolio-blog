@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Container, Header } from 'semantic-ui-react';
-import '../../../css/SelldomeLanding.css';
+import '../../../css/JobCropLanding.css';
 
-class SelldomeLanding extends Component {
+class JobCropLanding extends Component {
   constructor() {
     super()
   }
 
   render() {
     return (
-      <div className='selldome-landing'>
+      <div className='jobcrop-landing'>
         <Container text>
-          <Header size='huge' textAlign='center' className='selldome-title'>
-            Selldome
+          <Header size='huge' textAlign='center' className='jobcrop-title'>
+            JobCrop
             <Header.Subheader>
-              An AirBnB clone project.
+              The solution for Jobhunters
             </Header.Subheader>
           </Header>
         </Container>
@@ -23,4 +23,4 @@ class SelldomeLanding extends Component {
   }
 }
 
-export default SelldomeLanding;
+export default JobCropLanding;
