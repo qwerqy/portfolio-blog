@@ -1,37 +1,44 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Container, Menu } from 'semantic-ui-react';
 import "../css/Navbar.css";
 
 class Navbar extends Component {
   constructor() {
     super()
-    this.onHover = this.onHover.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+    this.state = {
+      activeLink: 'work'
+    }
   }
 
-  componentDidMount() {
-    this.onHover('about')
-    this.onHover('work')
-    this.onHover('blog')
-  }
-
-  onHover(id) {
-    const element = document.getElementById(id)
-    element.addEventListener('mouseover', () => {
-      element.classList.add('active')
-    })
-    element.addEventListener('mouseout', () => {
-      element.classList.remove('active')
+  handleClick = (e, { id }) => {
+    this.setState({
+      activeLink: id
     })
   }
 
   render() {
+    const { activeLink } = this.state
     return (
       <Menu secondary pointing>
         <Container>
           <Menu.Item position='left' header active>Amin Roslan</Menu.Item>
-          <Menu.Item id='about'>About</Menu.Item>
-          <Menu.Item id='work'>Work</Menu.Item>
-          <Menu.Item id='blog'>Blog</Menu.Item>
+          <Menu.Item as='div' onClick={this.handleClick} active={activeLink == 'work'} id='work'>
+            <NavLink to='/'>
+              Work
+            </NavLink>
+          </Menu.Item>
+          <Menu.Item as='div' onClick={this.handleClick} active={activeLink == 'about'} id='about'>
+            <NavLink to='/about'>
+              About
+            </NavLink>
+          </Menu.Item>
+          <Menu.Item as='div' onClick={this.handleClick} active={activeLink == 'blog'} id='blog'>
+            <NavLink to='/blog'>
+              Blog
+            </NavLink>
+          </Menu.Item>
         </Container>
       </Menu>
     )

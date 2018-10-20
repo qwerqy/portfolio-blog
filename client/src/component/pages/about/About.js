@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import AboutLanding from './AboutLanding';
 
 class About extends Component {
   render() {
-    <h1>About</h1>
+    return (
+      <AboutLanding />
+    )
   }
 }
 
