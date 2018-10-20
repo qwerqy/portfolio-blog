@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Responsive, Container, Divider, Menu } from 'semantic-ui-react';
 
 class Footer extends Component {
-  constructor() {
-    super()
-  }
-
   render() {
     return (
       <React.Fragment>
