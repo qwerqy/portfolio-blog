@@ -24,17 +24,17 @@ class Navbar extends Component {
       <Menu secondary pointing>
         <Container>
           <Menu.Item position='left' header active>Amin Roslan</Menu.Item>
-          <Menu.Item as='div' onClick={this.handleClick} active={activeLink == 'work'} id='work'>
+          <Menu.Item as='p' onClick={this.handleClick} active={activeLink === 'work'} id='work'>
             <NavLink to='/'>
               Work
             </NavLink>
           </Menu.Item>
-          <Menu.Item as='div' onClick={this.handleClick} active={activeLink == 'about'} id='about'>
+          <Menu.Item as='p' onClick={this.handleClick} active={activeLink === 'about'} id='about'>
             <NavLink to='/about'>
               About
             </NavLink>
           </Menu.Item>
-          <Menu.Item as='div' onClick={this.handleClick} active={activeLink == 'blog'} id='blog'>
+          <Menu.Item as='p' onClick={this.handleClick} active={activeLink === 'blog'} id='blog'>
             <NavLink to='/blog'>
               Blog
             </NavLink>
