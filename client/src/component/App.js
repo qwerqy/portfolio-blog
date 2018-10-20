@@ -4,6 +4,8 @@ import Navbar from './Navbar';
 import Work from './pages/work/Work' ;
 import About from './pages/about/About';
 import Blog from './pages/blog/Blog';
+import Selldome from './pages/projects/Selldome';
+import JobCrop from './pages/projects/JobCrop';
 import Footer from './Footer';
 import '../css/App.css';
 
@@ -20,6 +22,9 @@ class App extends Component {
               <Route exact path='/' component={Work} />
               <Route path='/about' component={About} />
               <Route path='/blog' component={Blog} />
+              // Hard coded for now. will implement with Rails soon
+              <Route path='/selldome' component={Selldome} />
+              <Route path='/jobcrop' component={JobCrop} />
             </Switch>
           </div>
           <Footer />
