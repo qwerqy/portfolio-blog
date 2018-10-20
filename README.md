@@ -1,24 +1,16 @@
-# README
+# Portfolio transformation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Tech Stack:
+Front End
+- ReactJS
+- React Router
+- Semantic UI
 
-Things you may want to cover:
+Back End
+- Rails API mode
+- ActiveAdmin
+- Devise
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## TODO
+- Finish up pages
+- Setup Blog access
