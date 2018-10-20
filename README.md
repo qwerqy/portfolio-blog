@@ -12,5 +12,5 @@ Back End
 - Devise
 
 ## TODO
-- Finish up pages
+- ~~Finish up pages~~
 - Setup Blog access
