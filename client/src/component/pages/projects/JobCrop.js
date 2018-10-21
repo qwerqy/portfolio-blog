@@ -34,15 +34,15 @@ class JobCrop extends Component {
             they want. That is one. From the employer side, we know they want data, data and data. Who applied? What's their background?
             Which candidate is fit? What's the trend of the applicants that chose the jobs they posted? All these are important.
             <Divider hidden/>
-            <Image src='https://doc-14-4k-docs.googleusercontent.com/docs/securesc/g38nksaairdvcphkp7n7s3fovpqaoscl/82o1adr30mb7blr2t3qh4lr8056et4v7/1540051200000/01379483902596371764/01379483902596371764/1ygf509Nz8FjK-lBsNja4OlGaomntlJJr?e=view' fluid/>
+            <Image src='https://i.imgur.com/8jqraCj.png' fluid/>
             <Divider hidden/>
             From here on we moved onto how we are going to structure the site. Making it a fully packaged site with all the features? Or just one feature.
             We went on making a full fledged app. Not knowing we only had 7 minutes to pitch it, we had to find a quick mind bender to actually show everyone
             why this is different than every other jobhunting sites out there. Before we get there, here are some wireframe sketches showing the initial idea for the app.
             <Divider hidden/>
-            <Image src='https://doc-0g-4k-docs.googleusercontent.com/docs/securesc/g38nksaairdvcphkp7n7s3fovpqaoscl/48kpsjuhfuckrsu52gg2np10jhepitgq/1540051200000/01379483902596371764/01379483902596371764/11pZbRwogr_vi75ALxRH83FjOxyXSl6Cs?e=view' fluid/>
+            <Image src='https://i.imgur.com/dRUPbHF.jpg' fluid/>
             <Divider hidden/>
-            <Image src='https://doc-04-4k-docs.googleusercontent.com/docs/securesc/g38nksaairdvcphkp7n7s3fovpqaoscl/t6kkodq3gtd73r0nu62kaburc7kltaut/1540051200000/01379483902596371764/01379483902596371764/1f4gTTeEfd8Q5HgPCzkzwLmv6a-CrkBSI?e=view' fluid/>
+            <Image src='https://i.imgur.com/sIAvRo7.jpg' fluid/>
             <Divider hidden/>
             <Header size='large'>Bringing out the Big Gun</Header>
             By the end of the project timeline, we came out with 3 main features, a messaging platform for jobhunters and employers to communicate, an analysis dashboard for employers, and a metasearch engine built for
