@@ -80,6 +80,7 @@ class JobCrop extends Component {
             We all learn and grow together. I couldn't have done it with my group. It was a very packed 2 weeks for me, I just picked up on ReactJS 4 days before the deadline, worked my ass off from day to night implementing
             it on the Hunt Engine. and I did it. Lesson to learn here is, really, passion and pure concentration.
             <Divider hidden/>
+              <a href='https://github.com/qwerqy/jobcrop'><strong> Github Repo</strong></a>
           </Container>
       </React.Fragment>
     )
