@@ -3,7 +3,7 @@ class BlogPostsController < ApiController
 
   # GET /blog_posts
   def index
-    @blog_posts = BlogPost.select(:id, :title, :content).all
+    @blog_posts = BlogPost.select(:id, :title, :content, :created_at, :updated_at).all
     render json: @blog_posts.to_json
   end
 
