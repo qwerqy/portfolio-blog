@@ -1,5 +1,4 @@
 class BlogPostsController < ApiController
-  before_action :set_blog_post, only: [:show, :update, :destroy]
 
   # GET /blog_posts
   def index
