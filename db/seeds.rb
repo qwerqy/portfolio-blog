@@ -1,4 +1,4 @@
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: ENV['active_admin_email'], password: ENV['active_admin_password'], password_confirmation: ENV['active_admin_password'])
 
 blog_posts = BlogPost.create(
   title: "My First App!",

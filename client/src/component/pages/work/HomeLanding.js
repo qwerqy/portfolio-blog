@@ -12,7 +12,7 @@ class HomeLanding extends Component {
       <div className='home-landing'>
         <Container text>
           <Header size='huge' textAlign='center' className='home-title'>
-            Hello, I am Amin. I am software engineer.
+            Hello, I am Amin. I am a software engineer.
           </Header>
         </Container>
       </div>
