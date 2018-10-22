@@ -52,7 +52,7 @@ class WorkLanding extends Component {
               {projects
                 ? Object.keys(projects).map((key) => {
                   return (
-                    <Grid.Column>
+                    <Grid.Column key={projects[key].id}>
                       <NavLink to='/selldome'>
                         <Card fluid id={projects[key].id}>
                           {projects[key].display_photo
@@ -63,7 +63,7 @@ class WorkLanding extends Component {
                           }
 
                             {projects[key].title && projects[key].techstack && projects[key].short_description
-                              ? <Card.Content key={projects[key].id}>
+                              ? <Card.Content>
                                   <Card.Header className="blog-title">{projects[key].title}</Card.Header>
                                   <Card.Meta>{projects[key].techstack}</Card.Meta>
                                   <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
@@ -95,7 +95,7 @@ class WorkLanding extends Component {
               {projects
                 ? Object.keys(projects).map((key) => {
                   return (
-                    <Grid.Column>
+                    <Grid.Column key={projects[key].id}>
                       <NavLink to='/selldome'>
                         <Card fluid id={projects[key].id}>
                           {projects[key].display_photo
@@ -106,7 +106,7 @@ class WorkLanding extends Component {
                           }
 
                             {projects[key].title && projects[key].techstack && projects[key].short_description
-                              ? <Card.Content key={projects[key].id}>
+                              ? <Card.Content>
                                   <Card.Header className="blog-title">{projects[key].title}</Card.Header>
                                   <Card.Meta>{projects[key].techstack}</Card.Meta>
                                   <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
@@ -138,7 +138,7 @@ class WorkLanding extends Component {
               {projects
                 ? Object.keys(projects).map((key) => {
                   return (
-                    <Grid.Column>
+                    <Grid.Column key={projects[key].id}>
                       <NavLink to='/selldome'>
                         <Card fluid id={projects[key].id}>
                           {projects[key].display_photo
@@ -149,7 +149,7 @@ class WorkLanding extends Component {
                           }
 
                             {projects[key].title && projects[key].techstack && projects[key].short_description
-                              ? <Card.Content key={projects[key].id}>
+                              ? <Card.Content>
                                   <Card.Header className="blog-title">{projects[key].title}</Card.Header>
                                   <Card.Meta>{projects[key].techstack}</Card.Meta>
                                   <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
