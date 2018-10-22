@@ -1,5 +1,5 @@
 ActiveAdmin.register Paragraph do
-  permit_params :title, :content, :photos, :live, :github
+  permit_params :project_id, :title, :content, :photos, :live, :github
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

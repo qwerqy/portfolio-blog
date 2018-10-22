@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
-    render json: @project
+    render json: @project.to_json(include: {paragraphs: { only: [:id, :title, :content, :photos, :live, :github]}})
   end
 
   # POST /projects

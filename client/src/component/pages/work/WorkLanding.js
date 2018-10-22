@@ -14,7 +14,6 @@ class WorkLanding extends Component {
   componentDidMount() {
     this.raisedOnHover('selldome')
     this.raisedOnHover('jobcrop')
-    this.getProjects()
   }
 
   raisedOnHover(id) {
@@ -29,21 +28,8 @@ class WorkLanding extends Component {
     }
   }
 
-  fetch = (endpoint) => {
-    return window.fetch(endpoint)
-    .then (response => response.json())
-    .catch (error => console.log(error))
-  }
-
-  getProjects = () => {
-    this.fetch('/api/projects')
-    .then(projects => {
-      projects ? this.setState({ projects: projects}) : this.setState({ projects: []})
-    })
-  }
-
   render() {
-    let { projects } = this.state
+    let projects = this.props.projects
     return (
       <Container>
         <Responsive {...Responsive.onlyComputer}>
@@ -53,7 +39,7 @@ class WorkLanding extends Component {
                 ? Object.keys(projects).map((key) => {
                   return (
                     <Grid.Column key={projects[key].id}>
-                      <NavLink to='/selldome'>
+                      <NavLink to={`/projects/${projects[key].id}`}>
                         <Card fluid id={projects[key].id}>
                           {projects[key].display_photo
                             ? <Image src={projects[key].display_photo} fluid />
@@ -89,6 +75,9 @@ class WorkLanding extends Component {
             </Grid.Row>
           </Grid>
         </Responsive>
+
+        {/*Tablet size*/}
+
         <Responsive {...Responsive.onlyTablet}>
           <Grid>
             <Grid.Row centered columns={1}>
@@ -96,7 +85,7 @@ class WorkLanding extends Component {
                 ? Object.keys(projects).map((key) => {
                   return (
                     <Grid.Column key={projects[key].id}>
-                      <NavLink to='/selldome'>
+                      <NavLink to={`/projects/${projects[key].id}`}>
                         <Card fluid id={projects[key].id}>
                           {projects[key].display_photo
                             ? <Image src={projects[key].display_photo} fluid />
@@ -132,6 +121,7 @@ class WorkLanding extends Component {
             </Grid.Row>
           </Grid>
         </Responsive>
+
         <Responsive {...Responsive.onlyMobile}>
           <Grid>
             <Grid.Row centered columns={1}>

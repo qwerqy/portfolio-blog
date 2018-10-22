@@ -6,8 +6,8 @@ class Work extends Component {
   render() {
     return (
       <React.Fragment>
-        <HomeLanding />
-        <WorkLanding />
+        <HomeLanding landingTitle={this.props.parentState.landing}/>
+        <WorkLanding projects={this.props.parentState.projects}/>
       </React.Fragment>
     )
   }
