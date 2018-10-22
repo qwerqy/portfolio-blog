@@ -1,5 +1,9 @@
 AdminUser.create!(email: ENV['active_admin_email'], password: ENV['active_admin_password'], password_confirmation: ENV['active_admin_password'])
 
+landing = Landing.create(
+  title: "Hi, I'm Amin, I am a Software Engineer"
+)
+
 blog_posts = BlogPost.create(
   title: "My First App!",
   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,
