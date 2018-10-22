@@ -36,3 +36,11 @@ blog_posts = BlogPost.create(
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
 )
+
+selldome = Project.create(
+  display_photo: 'https://i.imgur.com/7fmXZvn.png',
+  title: "Selldome",
+  subtitle: "An AirBnB clone project.",
+  techstack: "Built with Ruby on Rails",
+  short_description: "AirBnb Clone app developed for an assignment during my bootcamp."
+)

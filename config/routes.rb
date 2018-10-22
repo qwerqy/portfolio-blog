@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   scope '/api' do
+    resources :paragraphs
+    resources :projects
     resources :blog_posts
     resources :landings
   end
