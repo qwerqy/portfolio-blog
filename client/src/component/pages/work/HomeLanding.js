@@ -37,7 +37,7 @@ class HomeLanding extends Component {
       : <div className='home-landing'>
           <Container text>
             <Header size='huge' textAlign='center' className='home-title'>
-              Typing...
+              <Loader active inline='centered' />
             </Header>
           </Container>
         </div>
