@@ -129,7 +129,7 @@ class WorkLanding extends Component {
                 ? Object.keys(projects).map((key) => {
                   return (
                     <Grid.Column key={projects[key].id}>
-                      <NavLink to='/selldome'>
+                      <NavLink to={`/projects/${projects[key].id}`}>
                         <Card fluid id={projects[key].id}>
                           {projects[key].display_photo
                             ? <Image src={projects[key].display_photo} fluid />
