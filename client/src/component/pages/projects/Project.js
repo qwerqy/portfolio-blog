@@ -6,7 +6,6 @@ import ProjectLanding from './ProjectLanding';
 class Project extends Component {
   constructor() {
     super()
-    this.times = this.times.bind(this)
     this.getProject = this.getProject.bind(this)
     this.state = {}
   }
@@ -27,13 +26,6 @@ class Project extends Component {
     .then(project => {
       project ? this.setState({ project: project }) : this.setState({ project: [] })
     })
-  }
-
-  times = x => f => {
-    if (x > 0) {
-      f()
-      this.times (x - 1) (f)
-    }
   }
 
   render = () => {

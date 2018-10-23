@@ -9,7 +9,6 @@ class ProjectLanding extends Component {
 
   render() {
     let project = this.props.project
-    console.log(project)
     return project
         ? <div className='project-landing'>
             <Container text>

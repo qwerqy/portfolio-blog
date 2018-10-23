@@ -11,11 +11,6 @@ class WorkLanding extends Component {
     }
   }
 
-  componentDidMount() {
-    this.raisedOnHover('selldome')
-    this.raisedOnHover('jobcrop')
-  }
-
   raisedOnHover(id) {
     const element = document.getElementById(id)
     if (element != null) {
@@ -30,12 +25,17 @@ class WorkLanding extends Component {
 
   render() {
     let projects = this.props.projects
+    if (projects != null) {
+      Object.keys(projects).map((key) => {
+        this.raisedOnHover(projects[key].id)
+      })
+    }
     return (
       <Container>
         <Responsive {...Responsive.onlyComputer}>
           <Grid stackable>
             <Grid.Row centered columns={3}>
-              {projects
+              {projects && projects.length
                 ? Object.keys(projects).map((key) => {
                   return (
                     <Grid.Column key={projects[key].id}>
