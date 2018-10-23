@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Responsive, Segment, Image, Container, Grid, Card } from 'semantic-ui-react';
+import { Loader, Placeholder, Responsive, Segment, Image, Container, Grid, Card } from 'semantic-ui-react';
 
 class WorkLanding extends Component {
   constructor() {
@@ -9,11 +9,6 @@ class WorkLanding extends Component {
     this.state = {
       raised: 'raised'
     }
-  }
-
-  componentDidMount() {
-    this.raisedOnHover('selldome')
-    this.raisedOnHover('jobcrop')
   }
 
   raisedOnHover(id) {
@@ -29,95 +24,144 @@ class WorkLanding extends Component {
   }
 
   render() {
+    let projects = this.props.projects
+    if (projects != null) {
+      Object.keys(projects).map((key) => {
+        this.raisedOnHover(projects[key].id)
+      })
+    }
     return (
       <Container>
         <Responsive {...Responsive.onlyComputer}>
-          <Grid>
+          <Grid stackable>
             <Grid.Row centered columns={3}>
-              <Grid.Column>
-                <NavLink to='/selldome'>
-                  <Card fluid id='selldome'>
-                    <Image src='https://i.imgur.com/7fmXZvn.png' fluid />
-                    <Card.Content>
-                      <Card.Header className="blog-title">Selldome</Card.Header>
-                      <Card.Meta>Built with Ruby On Rails</Card.Meta>
-                      <Card.Description className="blog-content">AirBnb Clone app developed for an assignment during my bootcamp.</Card.Description>
-                    </Card.Content>
-                  </Card>
-                </NavLink>
-              </Grid.Column>
-              <Grid.Column>
-                <NavLink to='/jobcrop'>
-                  <Card fluid id='jobcrop'>
-                    <Image src='https://i.imgur.com/m1ytpk6.png' fluid />
-                    <Card.Content>
-                      <Card.Header className="blog-title">JobCrop</Card.Header>
-                      <Card.Meta>Built with React & Ruby On Rails</Card.Meta>
-                      <Card.Description className="blog-content">A jobhunting website with a powerful jobhunting metasearch engine.</Card.Description>
-                    </Card.Content>
-                  </Card>
-                </NavLink>
-              </Grid.Column>
+              {projects && projects.length
+                ? Object.keys(projects).map((key) => {
+                  return (
+                    <Grid.Column key={projects[key].id}>
+                      <NavLink to={`/projects/${projects[key].id}`}>
+                        <Card fluid id={projects[key].id}>
+                          {projects[key].display_photo
+                            ? <Image src={projects[key].display_photo} fluid />
+                            : <Placeholder>
+                                <Placeholder.Image rectangular />
+                              </Placeholder>
+                          }
+
+                            {projects[key].title && projects[key].techstack && projects[key].short_description
+                              ? <Card.Content>
+                                  <Card.Header className="blog-title">{projects[key].title}</Card.Header>
+                                  <Card.Meta>{projects[key].techstack}</Card.Meta>
+                                  <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
+                                </Card.Content>
+                              : <Placeholder>
+                                  <Placeholder.Header>
+                                    <Placeholder.Line />
+                                    <Placeholder.Line/>
+                                  </Placeholder.Header>
+                                  <Placeholder.Paragraph>
+                                    <Placeholder.Line />
+                                    <Placeholder.Line />
+                                  </Placeholder.Paragraph>
+                                </Placeholder>
+                            }
+                        </Card>
+                      </NavLink>
+                    </Grid.Column>
+                  )
+                })
+                : <Loader active inline='centered' />
+              }
             </Grid.Row>
           </Grid>
         </Responsive>
+
+        {/*Tablet size*/}
+
         <Responsive {...Responsive.onlyTablet}>
           <Grid>
             <Grid.Row centered columns={1}>
-              <Grid.Column>
-                <NavLink to='/selldome'>
-                  <Card fluid>
-                    <Image src='https://i.imgur.com/7fmXZvn.png' fluid />
-                    <Card.Content>
-                      <Card.Header className="blog-title">Selldome</Card.Header>
-                      <Card.Meta>Built with Ruby On Rails</Card.Meta>
-                      <Card.Description className="blog-content">AirBnb Clone app developed for an assignment during my bootcamp.</Card.Description>
-                    </Card.Content>
-                  </Card>
-                </NavLink>
-              </Grid.Column>
-              <Grid.Column>
-                <NavLink to='/jobcrop'>
-                  <Card fluid>
-                    <Image src='https://i.imgur.com/m1ytpk6.png' fluid />
-                    <Card.Content>
-                      <Card.Header className="blog-title">JobCrop</Card.Header>
-                      <Card.Meta>Built with React & Ruby On Rails</Card.Meta>
-                      <Card.Description className="blog-content">A jobhunting website with a powerful jobhunting metasearch engine.</Card.Description>
-                    </Card.Content>
-                  </Card>
-                </NavLink>
-              </Grid.Column>
+              {projects
+                ? Object.keys(projects).map((key) => {
+                  return (
+                    <Grid.Column key={projects[key].id}>
+                      <NavLink to={`/projects/${projects[key].id}`}>
+                        <Card fluid id={projects[key].id}>
+                          {projects[key].display_photo
+                            ? <Image src={projects[key].display_photo} fluid />
+                            : <Placeholder>
+                                <Placeholder.Image rectangular />
+                              </Placeholder>
+                          }
+
+                            {projects[key].title && projects[key].techstack && projects[key].short_description
+                              ? <Card.Content>
+                                  <Card.Header className="blog-title">{projects[key].title}</Card.Header>
+                                  <Card.Meta>{projects[key].techstack}</Card.Meta>
+                                  <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
+                                </Card.Content>
+                              : <Placeholder>
+                                  <Placeholder.Header>
+                                    <Placeholder.Line />
+                                    <Placeholder.Line/>
+                                  </Placeholder.Header>
+                                  <Placeholder.Paragraph>
+                                    <Placeholder.Line />
+                                    <Placeholder.Line />
+                                  </Placeholder.Paragraph>
+                                </Placeholder>
+                            }
+                        </Card>
+                      </NavLink>
+                    </Grid.Column>
+                  )
+                })
+                : <Loader active inline='centered' />
+              }
             </Grid.Row>
           </Grid>
         </Responsive>
+
         <Responsive {...Responsive.onlyMobile}>
           <Grid>
             <Grid.Row centered columns={1}>
-              <Grid.Column>
-                <NavLink to='/selldome'>
-                  <Card fluid>
-                    <Image src='https://i.imgur.com/7fmXZvn.png' fluid />
-                    <Card.Content>
-                      <Card.Header className="blog-title">Selldome</Card.Header>
-                      <Card.Meta>Built with Ruby On Rails</Card.Meta>
-                      <Card.Description className="blog-content">AirBnb Clone app developed for an assignment during my bootcamp.</Card.Description>
-                    </Card.Content>
-                  </Card>
-                </NavLink>
-              </Grid.Column>
-              <Grid.Column>
-                <NavLink to='/jobcrop'>
-                  <Card fluid>
-                    <Image src='https://i.imgur.com/m1ytpk6.png' fluid />
-                    <Card.Content>
-                      <Card.Header className="blog-title">JobCrop</Card.Header>
-                      <Card.Meta>Built with React & Ruby On Rails</Card.Meta>
-                      <Card.Description className="blog-content">A jobhunting website with a powerful jobhunting metasearch engine.</Card.Description>
-                    </Card.Content>
-                  </Card>
-                </NavLink>
-              </Grid.Column>
+              {projects
+                ? Object.keys(projects).map((key) => {
+                  return (
+                    <Grid.Column key={projects[key].id}>
+                      <NavLink to='/selldome'>
+                        <Card fluid id={projects[key].id}>
+                          {projects[key].display_photo
+                            ? <Image src={projects[key].display_photo} fluid />
+                            : <Placeholder>
+                                <Placeholder.Image rectangular />
+                              </Placeholder>
+                          }
+
+                            {projects[key].title && projects[key].techstack && projects[key].short_description
+                              ? <Card.Content>
+                                  <Card.Header className="blog-title">{projects[key].title}</Card.Header>
+                                  <Card.Meta>{projects[key].techstack}</Card.Meta>
+                                  <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
+                                </Card.Content>
+                              : <Placeholder>
+                                  <Placeholder.Header>
+                                    <Placeholder.Line />
+                                    <Placeholder.Line/>
+                                  </Placeholder.Header>
+                                  <Placeholder.Paragraph>
+                                    <Placeholder.Line />
+                                    <Placeholder.Line />
+                                  </Placeholder.Paragraph>
+                                </Placeholder>
+                            }
+                        </Card>
+                      </NavLink>
+                    </Grid.Column>
+                  )
+                })
+                : <Loader active inline='centered' />
+              }
             </Grid.Row>
           </Grid>
         </Responsive>

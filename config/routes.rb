@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   scope '/api' do
-    resources :blog_posts
+    resources :projects
+    resources :landings
   end
 
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
