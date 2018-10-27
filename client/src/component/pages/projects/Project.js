@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Image, Divider, Header, Loader, Container, Placeholder } from 'semantic-ui-react';
+import { Menu, Button, Image, Divider, Header, Loader, Container, Placeholder } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 import ProjectLanding from './ProjectLanding';
 
@@ -44,6 +44,21 @@ class Project extends Component {
                       <Divider hidden/>
                       {paragraph.content}
                       <Divider hidden/>
+                      {paragraph.live && paragraph.github
+                        ? <Menu text fluid widths={2} size='huge'>
+                            <Menu.Item as='a' target='_blank' href={paragraph.live}>
+                              <b>
+                                Live Site
+                              </b>
+                            </Menu.Item>
+                            <Menu.Item as='a' target='_blank' href={paragraph.github}>
+                              <b>
+                                Github Repo
+                              </b>
+                            </Menu.Item>
+                          </Menu>
+                        : false
+                      }
                     </div>
                 )
               })
