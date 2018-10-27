@@ -34,7 +34,7 @@ class WorkLanding extends Component {
       <Container>
         <Responsive {...Responsive.onlyComputer}>
           <Grid stackable>
-            <Grid.Row centered columns={3}>
+            <Grid.Row centered columns={2}>
               {projects && projects.length
                 ? Object.keys(projects).map((key) => {
                   return (
