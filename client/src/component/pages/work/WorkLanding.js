@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Loader, Placeholder, Responsive, Segment, Image, Container, Grid, Card } from 'semantic-ui-react';
+import { Divider, Loader, Placeholder, Responsive, Segment, Image, Container, Grid, Card } from 'semantic-ui-react';
 
 class WorkLanding extends Component {
   constructor() {
@@ -34,7 +34,7 @@ class WorkLanding extends Component {
       <Container>
         <Responsive {...Responsive.onlyComputer}>
           <Grid stackable>
-            <Grid.Row centered columns={2}>
+            <Grid.Row columns={2}>
               {projects && projects.length
                 ? Object.keys(projects).map((key) => {
                   return (
@@ -67,6 +67,7 @@ class WorkLanding extends Component {
                             }
                         </Card>
                       </NavLink>
+                      <Divider hidden />
                     </Grid.Column>
                   )
                 })
@@ -113,6 +114,7 @@ class WorkLanding extends Component {
                             }
                         </Card>
                       </NavLink>
+                      <Divider hidden />
                     </Grid.Column>
                   )
                 })
@@ -157,6 +159,7 @@ class WorkLanding extends Component {
                             }
                         </Card>
                       </NavLink>
+                      <Divider hidden />
                     </Grid.Column>
                   )
                 })
