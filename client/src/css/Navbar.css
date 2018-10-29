@@ -11,3 +11,10 @@ a {
 a:hover {
   color: grey
 }
+
+.ui.menu.secondary.pointing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
