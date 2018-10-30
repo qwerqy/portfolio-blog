@@ -1,70 +1,50 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Divider, Loader, Placeholder, Responsive, Segment, Image, Container, Grid, Card } from 'semantic-ui-react';
+import { Transition, Divider, Loader, Placeholder, Responsive, Segment, Image, Container, Grid, Card } from 'semantic-ui-react';
 
 class WorkLanding extends Component {
   constructor() {
     super()
-    this.raisedOnHover = this.raisedOnHover.bind(this)
+    this.handleFade = this.handleFade.bind(this)
     this.state = {
-      raised: 'raised'
+      visible: false
     }
   }
 
-  raisedOnHover(id) {
-    const element = document.getElementById(id)
-    if (element != null) {
-      element.addEventListener('mouseover', () => {
-        element.classList.add('raised')
-      })
-      element.addEventListener('mouseout', () => {
-        element.classList.remove('raised')
-      })
-    }
+  componentDidMount = () => {
+    this.handleFade()
+  }
+
+  handleFade = () => {
+    this.setState({
+      visible: true
+    })
   }
 
   render() {
-    let projects = this.props.projects
-    if (projects != null) {
-      Object.keys(projects).map((key) => {
-        this.raisedOnHover(projects[key].id)
-      })
-    }
+
+    const { visible } = this.state
+    const { projects } = this.props
+
     return (
       <Container>
-        <Responsive {...Responsive.onlyComputer}>
+        <Transition visible={visible} animation='fade up' duration={1300}>
           <Grid stackable>
             <Grid.Row columns={2}>
               {projects && projects.length
-                ? Object.keys(projects).map((key) => {
+                ? this.handleFade && Object.keys(projects).map((key) => {
                   return (
                     <Grid.Column key={projects[key].id}>
                       <NavLink to={`/projects/${projects[key].id}`}>
                         <Card fluid id={projects[key].id}>
-                          {projects[key].display_photo
-                            ? <Image src={projects[key].display_photo} fluid />
-                            : <Placeholder>
-                                <Placeholder.Image rectangular />
-                              </Placeholder>
-                          }
-
-                            {projects[key].title && projects[key].techstack && projects[key].short_description
-                              ? <Card.Content>
+                          {projects[key].display_photo && <Image src={projects[key].display_photo} fluid /> }
+                          {projects[key].title && projects[key].techstack && projects[key].short_description
+                            &&  <Card.Content>
                                   <Card.Header className="blog-title">{projects[key].title}</Card.Header>
                                   <Card.Meta>{projects[key].techstack}</Card.Meta>
                                   <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
                                 </Card.Content>
-                              : <Placeholder>
-                                  <Placeholder.Header>
-                                    <Placeholder.Line />
-                                    <Placeholder.Line/>
-                                  </Placeholder.Header>
-                                  <Placeholder.Paragraph>
-                                    <Placeholder.Line />
-                                    <Placeholder.Line />
-                                  </Placeholder.Paragraph>
-                                </Placeholder>
-                            }
+                          }
                         </Card>
                       </NavLink>
                       <Divider hidden />
@@ -75,99 +55,7 @@ class WorkLanding extends Component {
               }
             </Grid.Row>
           </Grid>
-        </Responsive>
-
-        {/*Tablet size*/}
-
-        <Responsive {...Responsive.onlyTablet}>
-          <Grid>
-            <Grid.Row centered columns={1}>
-              {projects
-                ? Object.keys(projects).map((key) => {
-                  return (
-                    <Grid.Column key={projects[key].id}>
-                      <NavLink to={`/projects/${projects[key].id}`}>
-                        <Card fluid id={projects[key].id}>
-                          {projects[key].display_photo
-                            ? <Image src={projects[key].display_photo} fluid />
-                            : <Placeholder>
-                                <Placeholder.Image rectangular />
-                              </Placeholder>
-                          }
-
-                            {projects[key].title && projects[key].techstack && projects[key].short_description
-                              ? <Card.Content>
-                                  <Card.Header className="blog-title">{projects[key].title}</Card.Header>
-                                  <Card.Meta>{projects[key].techstack}</Card.Meta>
-                                  <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
-                                </Card.Content>
-                              : <Placeholder>
-                                  <Placeholder.Header>
-                                    <Placeholder.Line />
-                                    <Placeholder.Line/>
-                                  </Placeholder.Header>
-                                  <Placeholder.Paragraph>
-                                    <Placeholder.Line />
-                                    <Placeholder.Line />
-                                  </Placeholder.Paragraph>
-                                </Placeholder>
-                            }
-                        </Card>
-                      </NavLink>
-                      <Divider hidden />
-                    </Grid.Column>
-                  )
-                })
-                : <Loader active inline='centered' />
-              }
-            </Grid.Row>
-          </Grid>
-        </Responsive>
-
-        <Responsive {...Responsive.onlyMobile}>
-          <Grid>
-            <Grid.Row centered columns={1}>
-              {projects
-                ? Object.keys(projects).map((key) => {
-                  return (
-                    <Grid.Column key={projects[key].id}>
-                      <NavLink to={`/projects/${projects[key].id}`}>
-                        <Card fluid id={projects[key].id}>
-                          {projects[key].display_photo
-                            ? <Image src={projects[key].display_photo} fluid />
-                            : <Placeholder>
-                                <Placeholder.Image rectangular />
-                              </Placeholder>
-                          }
-
-                            {projects[key].title && projects[key].techstack && projects[key].short_description
-                              ? <Card.Content>
-                                  <Card.Header className="blog-title">{projects[key].title}</Card.Header>
-                                  <Card.Meta>{projects[key].techstack}</Card.Meta>
-                                  <Card.Description className="blog-content">{projects[key].short_description}</Card.Description>
-                                </Card.Content>
-                              : <Placeholder>
-                                  <Placeholder.Header>
-                                    <Placeholder.Line />
-                                    <Placeholder.Line/>
-                                  </Placeholder.Header>
-                                  <Placeholder.Paragraph>
-                                    <Placeholder.Line />
-                                    <Placeholder.Line />
-                                  </Placeholder.Paragraph>
-                                </Placeholder>
-                            }
-                        </Card>
-                      </NavLink>
-                      <Divider hidden />
-                    </Grid.Column>
-                  )
-                })
-                : <Loader active inline='centered' />
-              }
-            </Grid.Row>
-          </Grid>
-        </Responsive>
+        </Transition>
       </Container>
     )
   }

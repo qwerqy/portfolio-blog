@@ -36,7 +36,7 @@ class Navbar extends Component {
     const { activeLink, mount } = this.state
     return (
       <Visibility onBottomPassed={this.mountMenu} onBottomVisible={this.unmountMenu} once={false}>
-        <Menu className={mount ? 'borderless' : 'borderless secondary pointing'} fixed={mount && 'top'}>
+        <Menu className={mount ? 'borderless' : 'borderless secondary pointing navbar'} fixed={mount && 'top'}>
           <Container>
             <Menu.Item as='div' position='left' header active={mount ? false : true}>
               <NavLink to='/'>
