@@ -42,7 +42,6 @@ class App extends Component {
   };
 
   render() {
-    let { landing, projects } = this.state;
     return (
       <Router>
         <React.Fragment>
