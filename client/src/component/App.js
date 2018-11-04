@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import Navbar from "./Navbar";
-import Work from "./pages/work/Work";
-import About from "./pages/about/About";
-import Project from "./pages/projects/Project";
-import NotFound from "./NotFound";
-import Footer from "./Footer";
+
+import Content from "./Content";
 import "../css/App.css";
 
 class App extends Component {
@@ -40,22 +38,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <React.Fragment>
-          <div className="App">
-            <Navbar />
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => <Work parentState={this.state} />}
-              />
-              <Route path="/about" component={About} />
-              <Route path={`/projects/:id`} component={Project} />
-              <Route component={NotFound} />
-            </Switch>
-          </div>
-          <Footer />
-        </React.Fragment>
+        <div>
+          <Navbar />
+          <Content parentState={this.state} />
+        </div>
       </Router>
     );
   }
