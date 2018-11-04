@@ -62,7 +62,7 @@ class Footer extends Component {
           </Container>
           <Container textAlign="center">
             <Divider hidden color="grey" />
-            <Icon name="copyright outline" /> 2018 Amin Roslan
+            <Icon name="copyright outline" /> 2018 Amin Roslan (v20)
             <Divider hidden />
           </Container>
         </Responsive>
