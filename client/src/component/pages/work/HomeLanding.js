@@ -23,7 +23,7 @@ class HomeLanding extends Component {
     return (
       <div className="home-landing">
         <Container text>
-          <Transition visible={visible} animation="fade up" duration={1000}>
+          <Transition visible={visible} animation="fade up" duration={1500}>
             <Header size="huge" textAlign="center" className="home-title">
               {landing ? (
                 this.handleFade.bind(this) && landing.title
