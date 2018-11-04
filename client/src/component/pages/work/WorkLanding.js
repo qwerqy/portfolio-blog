@@ -11,13 +11,9 @@ import {
 } from "semantic-ui-react";
 
 class WorkLanding extends Component {
-  constructor() {
-    super();
-    this.handleFade = this.handleFade.bind(this);
-    this.state = {
-      visible: false
-    };
-  }
+  state = {
+    visible: false
+  };
 
   componentDidMount = () => {
     this.handleFade();
@@ -29,15 +25,15 @@ class WorkLanding extends Component {
     });
   };
 
-  handleMouseOver = (id) => {
-    const element = document.querySelector(`#project-${id}`)
-    element.classList.add('raised')
-  }
+  handleMouseOver = id => {
+    const element = document.querySelector(`#project-${id}`);
+    element.classList.add("raised");
+  };
 
-  handleMouseOut = (id) => {
-    const element = document.querySelector(`#project-${id}`)
-    element.classList.remove('raised')
-  }
+  handleMouseOut = id => {
+    const element = document.querySelector(`#project-${id}`);
+    element.classList.remove("raised");
+  };
 
   render() {
     const { visible } = this.state;
@@ -54,9 +50,16 @@ class WorkLanding extends Component {
                   return (
                     <Grid.Column key={projects[key].id}>
                       <NavLink to={`/projects/${projects[key].id}`}>
-                        <Card fluid id={'project-'+projects[key].id}
-                          onMouseOver={() => this.handleMouseOver(projects[key].id)}
-                          onMouseOut={() => this.handleMouseOut(projects[key].id)}>
+                        <Card
+                          fluid
+                          id={"project-" + projects[key].id}
+                          onMouseOver={() =>
+                            this.handleMouseOver(projects[key].id)
+                          }
+                          onMouseOut={() =>
+                            this.handleMouseOut(projects[key].id)
+                          }
+                        >
                           {projects[key].display_photo && (
                             <Image src={projects[key].display_photo} fluid />
                           )}

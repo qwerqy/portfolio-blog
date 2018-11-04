@@ -4,15 +4,10 @@ import { Visibility, Container, Menu } from "semantic-ui-react";
 import "../css/Navbar.css";
 
 class Navbar extends Component {
-  constructor() {
-    super();
-    this.handleClick = this.handleClick.bind(this);
-    this.mountMenu = this.mountMenu.bind(this);
-    this.state = {
-      activeLink: "work",
-      mount: false
-    };
-  }
+  state = {
+    activeLink: "work",
+    mount: false
+  };
 
   handleClick = (e, { id }) => {
     this.setState({

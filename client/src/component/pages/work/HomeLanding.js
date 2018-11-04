@@ -3,12 +3,9 @@ import { Transition, Loader, Container, Header } from "semantic-ui-react";
 import "../../../css/HomeLanding.css";
 
 class HomeLanding extends Component {
-  constructor() {
-    super();
-    this.state = {
-      visible: false
-    };
-  }
+  state = {
+    visible: false
+  };
 
   componentDidMount = () => {
     this.handleFade();

@@ -12,11 +12,7 @@ import { Link } from "react-router-dom";
 import ProjectLanding from "./ProjectLanding";
 
 class Project extends Component {
-  constructor() {
-    super();
-    this.getProject = this.getProject.bind(this);
-    this.state = {};
-  }
+  state = {};
 
   componentDidMount() {
     const id = this.props.match.params.id;

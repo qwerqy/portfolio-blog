@@ -9,11 +9,7 @@ import Footer from "./Footer";
 import "../css/App.css";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.getLandingTitle = this.getLandingTitle.bind(this);
-    this.state = {};
-  }
+  state = {};
 
   componentDidMount() {
     this.getLandingTitle(1);

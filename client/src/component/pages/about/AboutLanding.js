@@ -3,12 +3,9 @@ import { Transition, Container, Header } from "semantic-ui-react";
 import "../../../css/AboutLanding.css";
 
 class AboutLanding extends Component {
-  constructor() {
-    super();
-    this.state = {
-      visible: false
-    };
-  }
+  state = {
+    visible: false
+  };
 
   componentDidMount = () => {
     this.handleFade();

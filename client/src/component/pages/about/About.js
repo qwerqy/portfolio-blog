@@ -10,13 +10,9 @@ import {
 } from "semantic-ui-react";
 
 class About extends Component {
-  constructor() {
-    super();
-    this.handleFade = this.handleFade.bind(this);
-    this.state = {
-      visible: false
-    };
-  }
+  state = {
+    visible: false
+  };
 
   componentDidMount = () => {
     this.handleFade();
