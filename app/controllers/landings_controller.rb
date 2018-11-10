@@ -46,6 +46,6 @@ class LandingsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def landing_params
-      params.require(:landing).permit(:title)
+      params.require(:landing).permit(:title, :link, :link_name)
     end
 end
