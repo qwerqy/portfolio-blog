@@ -25,11 +25,14 @@ class HomeLanding extends Component {
         <Container text>
           <Transition visible={visible} animation="fade up" duration={1500}>
             <Header size="huge" textAlign="center" className="home-title">
-              {landing ? (
-                this.handleFade.bind(this) && landing.title
-              ) : (
+              {landing 
+              ? (
+                this.handleFade.bind(this) && <span>{landing.title} <a href={landing.link} style={{color:'#4BAD00'}}>{landing.link_name}</a></span>
+              ) 
+              : (
                 <Loader active inline="centered" />
               )}
+              
             </Header>
           </Transition>
         </Container>
