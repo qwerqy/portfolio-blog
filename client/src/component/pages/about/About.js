@@ -28,7 +28,8 @@ class About extends Component {
             url: "https://icongr.am/devicon/visualstudio-plain.svg?size=50"
           },
           {
-            name: "Sublime 3"
+            name: "Sublime 3",
+            url: "https://forum.sublimetext.com/uploads/st-apple-touch-icon.png"
           }
         ]
       },
@@ -101,16 +102,16 @@ class About extends Component {
             url: "https://icongr.am/devicon/bootstrap-plain.svg?size=50"
           },
           {
-            name: "Sinatra"
+            name: "Sinatra",
+            url: "https://img.stackshare.io/service/999/logo.png"
           },
           {
-            name: "Semantic UI"
+            name: "Semantic UI",
+            url: "https://react.semantic-ui.com/logo.png"
           },
           {
-            name: "Native Base"
-          },
-          {
-            name: "OAuth"
+            name: "Native Base",
+            url: "https://nativebase.io/assets/img/front-page-icon.png"
           }
         ]
       }
@@ -193,7 +194,11 @@ class About extends Component {
                               marginBottom: "2rem"
                             }}
                           >
-                            <Image centered src={list[lkey].url} />
+                            <Image
+                              centered
+                              src={list[lkey].url}
+                              style={{ width: "50px" }}
+                            />
                             <span
                               style={{
                                 display: "inline-block",
