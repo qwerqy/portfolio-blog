@@ -54,7 +54,12 @@ class Footer extends Component {
           <Container textAlign="center">
             <Menu secondary hidden fluid widths={widths}>
               {items.map(item => (
-                <Menu.Item key={item.id}as="a" target="_blank" href={item.link}>
+                <Menu.Item
+                  key={item.id}
+                  as="a"
+                  target="_blank"
+                  href={item.link}
+                >
                   {item.title}
                 </Menu.Item>
               ))}
@@ -62,7 +67,7 @@ class Footer extends Component {
           </Container>
           <Container textAlign="center">
             <Divider hidden color="grey" />
-            <Icon name="copyright outline" /> 2018 Amin Roslan (v20)
+            <Icon name="copyright outline" /> 2018 Amin Roslan (v20.1)
             <Divider hidden />
           </Container>
         </Responsive>
